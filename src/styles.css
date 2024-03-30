@@ -102,6 +102,7 @@ body {
 
 /*Global anchor styles */
 a {
+  font-family: var(--primary-font);
   color: var(--accent-one-color); /* Link color */
   text-decoration: none;
 }
