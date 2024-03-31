@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {HeaderNavigationComponent} from "../components/header-navigation/header-navigation.component";
 
 @Component({
   selector: 'app-intro',

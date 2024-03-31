@@ -1,0 +1,64 @@
+.navbar {
+    background-color: var(--bg-color);
+    color: var(--text-color); /* Default text color */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: monospace;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li {
+    margin: 1rem;
+}
+
+.navbar ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    position: relative;
+}
+
+.navbar ul li a span {
+    display: inline-block;
+    position: relative;
+}
+
+.navbar ul li a span::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent; /* Initially transparent */
+    transition: background-color 0.3s ease-in; /* Smooth transition for underline effect */
+}
+
+.navbar ul li a:hover span::after {
+    background-color: var(--accent-two-color); /* Change background color to create underline effect */
+}
+
+.resume-button {
+    display: inline-block;
+    padding: .4rem 1.3rem;
+    background-color: var(--primary-color); /* Green background color */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.resume-button:hover {
+    background-color: var(--secondary-color); /* Darker green on hover */
+}
+

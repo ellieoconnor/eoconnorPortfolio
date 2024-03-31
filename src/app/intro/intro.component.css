@@ -1,0 +1,12 @@
+body{
+    font-family: var(--secondary-font);
+    font-weight: 700;
+}
+
+p {
+    display: block;
+    padding: 2rem;
+    margin: 2rem;
+    width: 25rem;
+    height: auto;
+}

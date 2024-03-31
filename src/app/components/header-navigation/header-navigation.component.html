@@ -1,13 +1,28 @@
 <nav class="navbar">
-  <ul>
-    <li><a>01. About Me</a></li>
-    <li><a>02. Experience</a></li>
-    <li><a>03. Projects</a></li>
-    <li><a>04. Contact</a></li>
-    <li class="darkModeButton"><a>
-      <span class="icon is-small">
-      <i class="fa-solid fa-moon"></i>
-      </span>
-    </a></li>
-  </ul>
+    <ul>
+        <li><a>01. <span>
+            {{NavBarTitles.about}}
+        </span></a></li>
+        <li><a>02. <span>
+            {{NavBarTitles.xp}}
+        </span></a></li>
+        <li><a>03. <span>
+            {{NavBarTitles.projects}}
+        </span></a></li>
+        <li><a>04. <span>
+            {{NavBarTitles.contact}}
+        </span></a></li>
+        <li>
+            <button class="resume-button">Resume</button>
+        </li>
+        <li (click)="toggleDarkMode()">
+            <span *ngIf="!isDarkMode">
+             <i class="fa-solid fa-moon"></i> <!-- Dark mode icon -->
+            </span>
+            <span *ngIf="isDarkMode">
+            <i class="fa-solid fa-sun"></i> <!-- Light mode icon -->
+            </span>
+        </li>
+
+    </ul>
 </nav>
