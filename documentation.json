@@ -2,57 +2,6 @@
     "pipes": [],
     "interfaces": [
         {
-            "name": "Links",
-            "id": "interface-Links-bc0ca0b27c917e853b2b4fe88ca506afb3cb068385781a48a18030ba5436ff0c4588ef8561bca51274e73096400be27535bdac3dce99011b7d6995af09398447",
-            "file": "src/app/components/header-navigation/links.model.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "export interface Links {\n  codewar: string;\n  github: string;\n  linkedin: string;\n  resume: string;\n}\n",
-            "properties": [
-                {
-                    "name": "codewar",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 2
-                },
-                {
-                    "name": "github",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 3
-                },
-                {
-                    "name": "linkedin",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 4
-                },
-                {
-                    "name": "resume",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 5
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 171,
-            "methods": [],
-            "extends": []
-        },
-        {
             "name": "User",
             "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
             "file": "src/stories/user.ts",
@@ -353,7 +302,7 @@
         },
         {
             "name": "HeaderNavigationComponent",
-            "id": "component-HeaderNavigationComponent-31864ccb4c608d8e3f9bc825a8856b7f220febc532a12d8f8fffb4a7536f9c91f34cff487f3f29749035f29dd28af45349e5cdac281a4796b5ad11f7a105fd07",
+            "id": "component-HeaderNavigationComponent-8cea9b3f53d1993108c175b1da98bd51fb3b1132dd4eaa7e5f2b62ffdc77ffa47f5723c5bc73521310f7007dbdc77d6182cf029b445876a1449da6b4a9b51ed3",
             "file": "src/app/components/header-navigation/header-navigation.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -372,22 +321,62 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isDarkMode",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "NavBarTitles",
+                    "defaultValue": "NavBarTitles",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 27,
+                    "modifierKind": [
+                        124,
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "toggleDarkMode",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "NgIf"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\nimport {Links} from \"./links.model\";\n\n@Component({\n  selector: 'app-header-navigation',\n  templateUrl: './header-navigation.component.html',\n  standalone: true,\n  styleUrls: ['./header-navigation.component.css']\n})\nexport class HeaderNavigationComponent {\n  // private links: Links;\n\n  //TODO EO: Tooltips\n\n  constructor() { }\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport {NavBarTitles} from \"../../constants-strings\";\nimport {NgIf} from \"@angular/common\";\n\n\n@Component({\n  selector: 'app-header-navigation',\n  templateUrl: './header-navigation.component.html',\n  standalone: true,\n  imports: [\n    NgIf\n  ],\n  styleUrls: ['./header-navigation.component.css']\n})\nexport class HeaderNavigationComponent {\n  // private links: Links;\n\n  //TODO EO: Tooltips\n\n  isDarkMode: boolean = true; //Assume false is light mode, true for dark mode.\ntoggleDarkMode() {\n  this.isDarkMode =!this.isDarkMode; //toggle mode\n}\n\n  constructor() { }\n\n  protected readonly NavBarTitles = NavBarTitles;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".navbar {\n    background-color: var(--bg-color);\n    color: var(--text-color); /* Default text color */\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    font-family: monospace;\n}\n\n.navbar ul {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n    display: flex;\n    align-items: center;\n}\n\n.navbar ul li {\n    margin: 1rem;\n}\n\n.navbar ul li a {\n    color: var(--text-color);\n    text-decoration: none;\n    position: relative;\n}\n\n.navbar ul li a span {\n    display: inline-block;\n    position: relative;\n}\n\n.navbar ul li a span::after {\n    content: '';\n    position: absolute;\n    bottom: -2px;\n    left: 0;\n    width: 100%;\n    height: 2px;\n    background-color: transparent; /* Initially transparent */\n    transition: background-color 0.3s ease-in; /* Smooth transition for underline effect */\n}\n\n.navbar ul li a:hover span::after {\n    background-color: var(--accent-two-color); /* Change background color to create underline effect */\n}\n\n.resume-button {\n    display: inline-block;\n    padding: .4rem 1.3rem;\n    background-color: var(--primary-color); /* Green background color */\n    color: white;\n    border: none;\n    border-radius: 8px; /* Rounded corners */\n    cursor: pointer;\n    text-align: center;\n    text-decoration: none;\n    font-size: 1rem;\n}\n\n.resume-button:hover {\n    background-color: var(--secondary-color); /* Darker green on hover */\n}\n\n",
                     "styleUrl": "./header-navigation.component.css"
                 }
             ],
@@ -398,14 +387,14 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 11
+                "line": 23
             },
             "extends": [],
-            "templateData": "<nav class=\"tabs is-right\">\n  <ul>\n    <li><a>01. About Me</a></li>\n    <li><a>02. Experience</a></li>\n    <li><a>03. Projects</a></li>\n    <li><a>04. Contact</a></li>\n    <li class=\"darkModeButton\"><a>\n      <span class=\"icon is-small\">\n      <i class=\"fa-solid fa-moon\"></i>\n      </span>\n    </a></li>\n  </ul>\n</nav>\n"
+            "templateData": "<nav class=\"navbar\">\n    <ul>\n        <li><a>01. <span>\n            {{NavBarTitles.about}}\n        </span></a></li>\n        <li><a>02. <span>\n            {{NavBarTitles.xp}}\n        </span></a></li>\n        <li><a>03. <span>\n            {{NavBarTitles.projects}}\n        </span></a></li>\n        <li><a>04. <span>\n            {{NavBarTitles.contact}}\n        </span></a></li>\n        <li>\n            <button class=\"resume-button\">Resume</button>\n        </li>\n        <li (click)=\"toggleDarkMode()\">\n            <span *ngIf=\"!isDarkMode\">\n             <i class=\"fa-solid fa-moon\"></i> <!-- Dark mode icon -->\n            </span>\n            <span *ngIf=\"isDarkMode\">\n            <i class=\"fa-solid fa-sun\"></i> <!-- Light mode icon -->\n            </span>\n        </li>\n\n    </ul>\n</nav>\n"
         },
         {
             "name": "IntroComponent",
-            "id": "component-IntroComponent-44f65783368d30409e2f0a08f84c4793ae7e0ec2a1830ff4f4169dc28ac2eaa9c4846518334b128e999f4257d0a51497fc84cb06f00b849b304f039dc8407d88",
+            "id": "component-IntroComponent-e1e782d49065e1638a86ba5c1fd118073ba09e16648d4ea13b92d2b53066aec71e879a4f7be55694b47081dae615ef7de5e3f33193cc7c4072b270d8341d67d2",
             "file": "src/app/intro/intro.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -433,13 +422,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-intro',\n  templateUrl: './intro.component.html',\n  styleUrl: './intro.component.css'\n})\nexport class IntroComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport {HeaderNavigationComponent} from \"../components/header-navigation/header-navigation.component\";\n\n@Component({\n  selector: 'app-intro',\n  templateUrl: './intro.component.html',\n  styleUrl: './intro.component.css'\n})\nexport class IntroComponent {\n\n}\n",
             "styleUrl": "./intro.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<app-header-navigation></app-header-navigation>\n"
+            "templateData": "<app-header-navigation></app-header-navigation>\n<app-sidebar></app-sidebar>\n<div class=\"contents\">\n<h3>Hello! My name is</h3>\n<h1>Elizabeth O'Connor</h1>\n<h2>Fullstack Software Developer</h2>\n<p>I’m a software developer specializing in creating exceptional digital experiences.\n    Currently, I’m focused on building a modern, accessible, and intuitive ERP system for\n    <a href=\"https://www.blinfo.com/\">B&L Information Systems</a>.\n</p>\n</div>"
         },
         {
             "name": "PageComponent",
@@ -533,18 +522,62 @@
             ],
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "SidebarComponent",
+            "id": "component-SidebarComponent-4ec1550e550ece0c9d38ab8289918eef11773eed55474c2288329177b1ce4b88f4577813d1c3a00f6386a64109ee5f647e1b884d61d4bcd3363174f937232bcc",
+            "file": "src/app/components/sidebar/sidebar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-sidebar",
+            "styleUrls": [
+                "./sidebar.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sidebar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    selector: 'app-sidebar',\n    templateUrl: './sidebar.component.html',\n    styleUrls: ['./sidebar.component.css'],\n    standalone: true,\n    // imports: [\n    //\n    // ]\n})\n\nexport class SidebarComponent {\n\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./sidebar.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<nav>\n    <ul>\n        <li><a href=\"#\"><i class=\"fa-brands fa-github\"></i></a></li>\n        <li><a href=\"#\"><i class=\"fa-brands fa-linkedin\"></i></a></li>\n        <li><a href=\"#\"><i class=\"fa-brands fa-instagram\"></i></a></li>\n        <li><a href=\"#\"><i class=\"fa-brands fa-codepen\"></i></a></li>\n        <li><a href=\"#\"><i class=\"fa-solid fa-file\"></i></a></li>\n    </ul>\n</nav>"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-417354c5cd70ab6ff5da58d147f4df0b987f5567a89160c2f47fdf00416dfc9a316cc8372e522483ccbbb2c12c1900161c6db5278a1fdb24e31931aad18d7582",
+            "id": "module-AppModule-520dd89cf6672439766d78c16b304a46773e18972e3bf4cd6c4d7e09242314150a86c5ea1e6655cf37e7e5847f64b7bbfbe2be9390529502aba2d672cb1f058c",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { IntroComponent } from './intro/intro.component';\nimport {HeaderNavigationComponent} from \"./components/header-navigation/header-navigation.component\";\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    IntroComponent\n  ],\n    imports: [\n        BrowserModule,\n        AppRoutingModule,\n        HeaderNavigationComponent\n    ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { IntroComponent } from './intro/intro.component';\nimport {HeaderNavigationComponent} from \"./components/header-navigation/header-navigation.component\";\nimport {SidebarComponent} from \"./components/sidebar/sidebar.component\";\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    IntroComponent\n  ],\n    imports: [\n        BrowserModule,\n        AppRoutingModule,\n        HeaderNavigationComponent,\n        SidebarComponent\n    ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -569,6 +602,9 @@
                         },
                         {
                             "name": "HeaderNavigationComponent"
+                        },
+                        {
+                            "name": "SidebarComponent"
                         }
                     ]
                 },
@@ -627,7 +663,40 @@
             ]
         }
     ],
-    "miscellaneous": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "NavBarTitles",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/constants-strings.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n    about: 'About Me',\n    xp: 'Experience',\n    projects: 'Projects',\n    contact: 'Contact',\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/constants-strings.ts": [
+                {
+                    "name": "NavBarTitles",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/constants-strings.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n    about: 'About Me',\n    xp: 'Experience',\n    projects: 'Projects',\n    contact: 'Contact',\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
     "routes": {
         "name": "<root>",
         "kind": "module",
@@ -643,7 +712,7 @@
         ]
     },
     "coverage": {
-        "count": 10,
+        "count": 9,
         "status": "low",
         "files": [
             {
@@ -661,16 +730,26 @@
                 "linktype": "component",
                 "name": "HeaderNavigationComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/header-navigation/links.model.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "Links",
+                "filePath": "src/app/components/sidebar/sidebar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SidebarComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/constants-strings.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "NavBarTitles",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
