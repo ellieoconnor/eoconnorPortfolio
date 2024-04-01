@@ -12,7 +12,6 @@ export default {
     ]
 };
 
-export const NavigationBar = () => ({
+export const Sidebar = () => ({
 template: `<app-sidebar></app-sidebar>`}); // Use inline template instead of templateUrl
 
-export {SidebarComponent};
