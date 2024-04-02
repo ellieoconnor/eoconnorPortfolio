@@ -394,7 +394,7 @@
         },
         {
             "name": "IntroComponent",
-            "id": "component-IntroComponent-8b12dae2d84982c081a1dc618a99cc19237468c1eea9b1605d69b953b338980afc7783448578eb1976cfea473211f8855bb53710f2cb3698ce5ef120e9ad6490",
+            "id": "component-IntroComponent-239f74caa1b7c631de4a2592754ee310b3488a6dc1a709f6d3ac3d91b09894d8ef4fca1c053a3a72162f7d14ea66f7122534d2cd6d963839e47b9cdfbf6404aa",
             "file": "src/app/intro/intro.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -402,7 +402,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-intro",
-            "styleUrls": [],
+            "styleUrls": [
+                "./intro.component.css"
+            ],
             "styles": [],
             "templateUrl": [
                 "./intro.component.html"
@@ -422,13 +424,25 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport {HeaderNavigationComponent} from \"../components/header-navigation/header-navigation.component\";\nimport { SidebarComponent} from \"../components/sidebar/sidebar.component\";\n\n@Component({\n  selector: 'app-intro',\n  templateUrl: './intro.component.html',\n  styleUrl: './intro.component.css',\n})\nexport class IntroComponent {\n\n}\n",
-            "styleUrl": "./intro.component.css",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { SidebarComponent} from \"../components/sidebar/sidebar.component\";\n\n@Component({\n  selector: 'app-intro',\n  templateUrl: './intro.component.html',\n  styleUrls: ['./intro.component.css'],\n})\nexport class IntroComponent {\n\n  constructor() {\n\n  }\n\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper {\n    display: flex;\n    height: 100vh; /* Ensure the wrapper takes up the full height of the viewport */\n}\n\n.contents{\n    flex: 1;\n    padding-left: 220px;\n    margin-left: 5%;\n    margin-right: 5%;\n}\n\n.sidebar {\n    width: 200px; /* Adjust the width as needed */\n    color: #fff; /* Example text color */\n    position: fixed; /* Fixed position to keep it visible while scrolling */\n    left: 0; /* Position on the left side */\n    top: 0; /* Position at the top */\n    height: 100%; /* Take up the full height of the viewport */\n}\n\nh1, h2 {\n    font-size: 4rem;\n    margin: 1rem;\n    padding: 0;\n}\n\nh3 {\n    font-family: var(--monospace-font);\n}\n\np {\n    /*display: block;*/\n    margin: 1rem;\n    /*padding: 2rem;*/\n    width: 33rem;\n    line-height: 1.5rem;\n    /*height: auto;*/\n}",
+                    "styleUrl": "./intro.component.css"
+                }
+            ],
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            },
             "extends": [],
-            "templateData": "<div class=\"wrapper\">\n    <app-sidebar></app-sidebar>\n    <div class=\"contents\">\n        <app-header-navigation></app-header-navigation>\n\n        <h3>Hello! My name is</h3>\n        <h1>Elizabeth O'Connor</h1>\n        <h2>Fullstack Software Developer</h2>\n        <p>I’m a software developer specializing in creating exceptional digital experiences.\n            Currently, I’m focused on building a modern, accessible, and intuitive ERP system for\n            <a href=\"https://www.blinfo.com/\">B&L Information Systems</a>.\n        </p>\n    </div>\n</div>\n"
+            "templateData": " <app-sidebar></app-sidebar>\n    <div class=\"contents\">\n        <app-header-navigation></app-header-navigation>\n\n        <h3>Hello! My name is</h3>\n        <h1>Elizabeth O'Connor</h1>\n        <h2>Fullstack Software Developer</h2>\n        <p>I’m a software developer specializing in creating exceptional digital experiences.\n            Currently, I’m focused on building a modern, accessible, and intuitive ERP system for\n            <a href=\"https://www.blinfo.com/\">B&L Information Systems</a>.\n        </p>\n    </div>\n"
         },
         {
             "name": "PageComponent",
@@ -559,7 +573,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".sidebar-nav {\n    height: 100%;\n    width: 200px;\n    position: fixed;\n    top: 0;\n    left: 0;\n    background-color: var(--primary-color);\n    padding-top: 2rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-end;\n    align-items: center;\n}\n\n.sidebar-nav ul {\n    list-style-type: none;\n    padding: 0;\n    margin-bottom: 2rem;\n}\n\n.sidebar-nav li {\n    padding: 0.7rem;\n}\n\n.sidebar-nav a {\n    color: var(--secondary-color);\n    text-decoration: none;\n}\n\n.sidebar-nav a:hover {\n    color: var(--accent-three-color);\n}\n\n.sidebar-nav i {\n    font-size: 2rem;\n}",
+                    "data": ".sidebar-nav {\n    height: 100%;\n    width: 200px;\n    position: fixed;\n    top: 0;\n    left: 0;\n    background-color: var(--primary-color);\n    padding-top: 2rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-end;\n    align-items: center;\n}\n\n.sidebar-nav ul {\n    list-style-type: none;\n    padding: 0;\n    margin-bottom: 1rem;\n    height: 50%;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-end;\n}\n\n.sidebar-nav li {\n    padding: 0.7rem;\n}\n\n.sidebar-nav a {\n    color: var(--secondary-color);\n    text-decoration: none;\n}\n\n.sidebar-nav a:hover {\n    color: var(--accent-three-color);\n}\n\n.sidebar-nav i {\n    font-size: 1.7rem;\n}\n\n.vertical-line {\n    border-left: 3px solid var(--secondary-color);\n    height: 200px;\n}",
                     "styleUrl": "./sidebar.component.css"
                 }
             ],
@@ -573,19 +587,19 @@
                 "line": 10
             },
             "extends": [],
-            "templateData": "<nav class=\"sidebar-nav\">\n    <ul>\n        <li><a href=\"#\"><i class=\"fa-brands fa-github\"></i></a></li>\n        <li><a href=\"#\"><i class=\"fa-brands fa-linkedin\"></i></a></li>\n        <li><a href=\"#\"><i class=\"fa-brands fa-instagram\"></i></a></li>\n        <li><a href=\"#\"><i class=\"fa-brands fa-codepen\"></i></a></li>\n        <li><a href=\"#\"><i class=\"fa-solid fa-file\"></i></a></li>\n    </ul>\n</nav>"
+            "templateData": "<nav class=\"sidebar-nav\">\n    <ul>\n        <li class=\"list-container\"><a href=\"#\"><i class=\"fa-brands fa-github icon\"></i></a></li>\n        <li class=\"list-container\"><a href=\"#\"><i class=\"fa-brands fa-linkedin icon\"></i></a></li>\n        <li class=\"list-container\"><a href=\"#\"><i class=\"fa-brands fa-instagram icon\"></i></a></li>\n        <li class=\"list-container\"><a href=\"#\"><i class=\"fa-brands fa-codepen icon\"></i></a></li>\n        <li class=\"list-container\"><a href=\"#\"><i class=\"fa-solid fa-file icon\"></i></a></li>\n    </ul>\n    <div class=\"vertical-line\"></div>\n</nav>"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-520dd89cf6672439766d78c16b304a46773e18972e3bf4cd6c4d7e09242314150a86c5ea1e6655cf37e7e5847f64b7bbfbe2be9390529502aba2d672cb1f058c",
+            "id": "module-AppModule-6386139165ab9b8bc1c55d2c390d94495b41c9b26f4a8762a6b302212eeb79556cb72a13174b62fa5b307cc4106370834e571b8ffcc4a1307238affa7be5d9bb",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { IntroComponent } from './intro/intro.component';\nimport {HeaderNavigationComponent} from \"./components/header-navigation/header-navigation.component\";\nimport {SidebarComponent} from \"./components/sidebar/sidebar.component\";\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    IntroComponent\n  ],\n    imports: [\n        BrowserModule,\n        AppRoutingModule,\n        HeaderNavigationComponent,\n        SidebarComponent\n    ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { IntroComponent } from './intro/intro.component';\nimport {HeaderNavigationComponent} from './components/header-navigation/header-navigation.component';\nimport { SidebarComponent } from './components/sidebar/sidebar.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    IntroComponent,\n  ],\n    imports: [\n        BrowserModule,\n        AppRoutingModule,\n        HeaderNavigationComponent,\n        SidebarComponent,\n        HeaderNavigationComponent\n    ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -607,6 +621,9 @@
                     "elements": [
                         {
                             "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "HeaderNavigationComponent"
                         },
                         {
                             "name": "HeaderNavigationComponent"
@@ -766,7 +783,7 @@
                 "linktype": "component",
                 "name": "IntroComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {

@@ -2,13 +2,14 @@ import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common'; // Import CommonModule if needed
 import { IntroComponent } from "./intro.component";
 import {HeaderNavigationComponent} from "../components/header-navigation/header-navigation.component";
+import {SidebarComponent} from "../components/sidebar/sidebar.component";
 
 export default {
     title: 'Intro Page',
     component: IntroComponent,
     decorators: [
         moduleMetadata({
-            imports: [CommonModule, HeaderNavigationComponent], // Import necessary Angular modules here
+            imports: [CommonModule, HeaderNavigationComponent, SidebarComponent], // Import necessary Angular modules here
             declarations: []
         })
     ]

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {NavBarTitles} from "../../constants-strings";
-import {NgIf} from "@angular/common";
+import {NgIf, NgOptimizedImage} from "@angular/common";
 
 
 @Component({
@@ -8,7 +8,8 @@ import {NgIf} from "@angular/common";
   templateUrl: './header-navigation.component.html',
   standalone: true,
   imports: [
-    NgIf
+    NgIf,
+    NgOptimizedImage
   ],
   styleUrls: ['./header-navigation.component.css']
 })
