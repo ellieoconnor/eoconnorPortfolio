@@ -302,7 +302,7 @@
         },
         {
             "name": "HeaderNavigationComponent",
-            "id": "component-HeaderNavigationComponent-8cea9b3f53d1993108c175b1da98bd51fb3b1132dd4eaa7e5f2b62ffdc77ffa47f5723c5bc73521310f7007dbdc77d6182cf029b445876a1449da6b4a9b51ed3",
+            "id": "component-HeaderNavigationComponent-c532a01627cce5953b02e59a343f26ba52eb2daf6bacb6b00e32b98e01e49d5260f1dde07277a3f4c06fe364b5ec54da9c8140e5d56a156b870656dc19c5dc3c",
             "file": "src/app/components/header-navigation/header-navigation.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -330,7 +330,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 21
                 },
                 {
                     "name": "NavBarTitles",
@@ -340,7 +340,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 27,
+                    "line": 28,
                     "modifierKind": [
                         124,
                         148
@@ -354,7 +354,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -367,16 +367,19 @@
             "imports": [
                 {
                     "name": "NgIf"
+                },
+                {
+                    "name": "NgOptimizedImage"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport {NavBarTitles} from \"../../constants-strings\";\nimport {NgIf} from \"@angular/common\";\n\n\n@Component({\n  selector: 'app-header-navigation',\n  templateUrl: './header-navigation.component.html',\n  standalone: true,\n  imports: [\n    NgIf\n  ],\n  styleUrls: ['./header-navigation.component.css']\n})\nexport class HeaderNavigationComponent {\n  // private links: Links;\n\n  //TODO EO: Tooltips\n\n  isDarkMode: boolean = true; //Assume false is light mode, true for dark mode.\ntoggleDarkMode() {\n  this.isDarkMode =!this.isDarkMode; //toggle mode\n}\n\n  constructor() { }\n\n  protected readonly NavBarTitles = NavBarTitles;\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport {NavBarTitles} from \"../../constants-strings\";\nimport {NgIf, NgOptimizedImage} from \"@angular/common\";\n\n\n@Component({\n  selector: 'app-header-navigation',\n  templateUrl: './header-navigation.component.html',\n  standalone: true,\n  imports: [\n    NgIf,\n    NgOptimizedImage\n  ],\n  styleUrls: ['./header-navigation.component.css']\n})\nexport class HeaderNavigationComponent {\n  // private links: Links;\n\n  //TODO EO: Tooltips\n\n  isDarkMode: boolean = true; //Assume false is light mode, true for dark mode.\ntoggleDarkMode() {\n  this.isDarkMode =!this.isDarkMode; //toggle mode\n}\n\n  constructor() { }\n\n  protected readonly NavBarTitles = NavBarTitles;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".navbar {\n    background-color: var(--bg-color);\n    color: var(--text-color); /* Default text color */\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    font-family: monospace;\n}\n\n.navbar ul {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n    display: flex;\n    align-items: center;\n}\n\n.navbar ul li {\n    margin: 1rem;\n}\n\n.navbar ul li a {\n    color: var(--text-color);\n    text-decoration: none;\n    position: relative;\n}\n\n.navbar ul li a span {\n    display: inline-block;\n    position: relative;\n}\n\n.navbar ul li a span::after {\n    content: '';\n    position: absolute;\n    bottom: -2px;\n    left: 0;\n    width: 100%;\n    height: 2px;\n    background-color: transparent; /* Initially transparent */\n    transition: background-color 0.3s ease-in; /* Smooth transition for underline effect */\n}\n\n.navbar ul li a:hover span::after {\n    background-color: var(--accent-two-color); /* Change background color to create underline effect */\n}\n\n.resume-button {\n    display: inline-block;\n    padding: .4rem 1.3rem;\n    background-color: var(--primary-color); /* Green background color */\n    color: white;\n    border: none;\n    border-radius: 8px; /* Rounded corners */\n    cursor: pointer;\n    text-align: center;\n    text-decoration: none;\n    font-size: 1rem;\n}\n\n.resume-button:hover {\n    background-color: var(--secondary-color); /* Darker green on hover */\n}\n\n",
+                    "data": ".navbar {\n    background-color: var(--bg-color);\n    color: var(--text-color); /* Default text color */\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    font-family: monospace;\n    height: 3.5rem;\n}\n\n.navbar ul {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n    display: flex;\n    align-items: center;\n}\n\n.navbar ul li {\n    margin: 1rem;\n}\n\n.navbar ul li a {\n    color: var(--text-color);\n    text-decoration: none;\n    position: relative;\n}\n\n.navbar ul li a span {\n    display: inline-block;\n    position: relative;\n}\n\n.navbar ul li a span::after {\n    content: '';\n    position: absolute;\n    bottom: -2px;\n    left: 0;\n    width: 100%;\n    height: 2px;\n    background-color: transparent; /* Initially transparent */\n    transition: background-color 0.3s ease-in; /* Smooth transition for underline effect */\n}\n\n.navbar ul li a:hover span::after {\n    background-color: var(--accent-two-color); /* Change background color to create underline effect */\n}\n\n.resume-button {\n    display: inline-block;\n    padding: .4rem 1.3rem;\n    background-color: var(--primary-color); /* Green background color */\n    color: white;\n    border: none;\n    border-radius: 8px; /* Rounded corners */\n    cursor: pointer;\n    text-align: center;\n    text-decoration: none;\n    font-size: 1rem;\n}\n\n.resume-button:hover {\n    background-color: var(--secondary-color); /* Darker green on hover */\n}\n\n.img-container{\n    height: 100%;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.img-container img {\n    object-fit: contain; /* Fit the image inside the container while preserving aspect ratio */\n    padding: 0.5rem;\n    width: fit-content;\n    max-height: 90%; /* Ensure the image doesn't exceed the container's height */\n    max-width: 100%; /* Ensure the image doesn't exceed the container's width */\n}",
                     "styleUrl": "./header-navigation.component.css"
                 }
             ],
@@ -387,10 +390,10 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 23
+                "line": 24
             },
             "extends": [],
-            "templateData": "<nav class=\"navbar\">\n    <ul>\n        <li><a>01. <span>\n            {{NavBarTitles.about}}\n        </span></a></li>\n        <li><a>02. <span>\n            {{NavBarTitles.xp}}\n        </span></a></li>\n        <li><a>03. <span>\n            {{NavBarTitles.projects}}\n        </span></a></li>\n        <li><a>04. <span>\n            {{NavBarTitles.contact}}\n        </span></a></li>\n        <li>\n            <button class=\"resume-button\">Resume</button>\n        </li>\n        <li (click)=\"toggleDarkMode()\">\n            <span *ngIf=\"!isDarkMode\">\n             <i class=\"fa-solid fa-moon\"></i> <!-- Dark mode icon -->\n            </span>\n            <span *ngIf=\"isDarkMode\">\n            <i class=\"fa-solid fa-sun\"></i> <!-- Light mode icon -->\n            </span>\n        </li>\n\n    </ul>\n</nav>\n"
+            "templateData": "<nav class=\"navbar\">\n    <div class=\"img-container\">\n    <img ngSrc=\"assets/eLogo.png\" alt=\"logo with initials\" height=\"2250\" width=\"2000\"/>\n    </div>\n    <ul>\n        <li><a>01. <span>\n            {{NavBarTitles.about}}\n        </span></a></li>\n        <li><a>02. <span>\n            {{NavBarTitles.xp}}\n        </span></a></li>\n        <li><a>03. <span>\n            {{NavBarTitles.projects}}\n        </span></a></li>\n        <li><a>04. <span>\n            {{NavBarTitles.contact}}\n        </span></a></li>\n        <li>\n            <button class=\"resume-button\">Resume</button>\n        </li>\n        <li (click)=\"toggleDarkMode()\">\n            <span *ngIf=\"!isDarkMode\">\n             <i class=\"fa-solid fa-moon\"></i> <!-- Dark mode icon -->\n            </span>\n            <span *ngIf=\"isDarkMode\">\n            <i class=\"fa-solid fa-sun\"></i> <!-- Light mode icon -->\n            </span>\n        </li>\n\n    </ul>\n</nav>\n"
         },
         {
             "name": "IntroComponent",
@@ -573,7 +576,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".sidebar-nav {\n    height: 100%;\n    width: 200px;\n    position: fixed;\n    top: 0;\n    left: 0;\n    background-color: var(--primary-color);\n    padding-top: 2rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-end;\n    align-items: center;\n}\n\n.sidebar-nav ul {\n    list-style-type: none;\n    padding: 0;\n    margin-bottom: 1rem;\n    height: 50%;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-end;\n}\n\n.sidebar-nav li {\n    padding: 0.7rem;\n}\n\n.sidebar-nav a {\n    color: var(--secondary-color);\n    text-decoration: none;\n}\n\n.sidebar-nav a:hover {\n    color: var(--accent-three-color);\n}\n\n.sidebar-nav i {\n    font-size: 1.7rem;\n}\n\n.vertical-line {\n    border-left: 3px solid var(--secondary-color);\n    height: 200px;\n}",
+                    "data": ".sidebar-nav {\n    height: 100%;\n    width: 200px;\n    position: fixed;\n    top: 0;\n    left: 0;\n    background-color: var(--primary-color);\n    padding-top: 2rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-end;\n    align-items: center;\n}\n\n.sidebar-nav ul {\n    list-style-type: none;\n    padding: 0;\n    margin-bottom: 1rem;\n    height: 50%;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-end;\n}\n\n.sidebar-nav li {\n    /*padding: 0.7rem;*/\n    margin: 0.7rem;\n    transition: transform 0.5s ease;\n}\n\n.sidebar-nav li:hover {\n    transform: translateY(-5px);\n}\n\n.sidebar-nav a {\n    color: var(--secondary-color);\n    text-decoration: none;\n}\n\n.sidebar-nav a:hover {\n    color: var(--accent-three-color);\n}\n\n.sidebar-nav i {\n    font-size: 1.7rem;\n}\n\n.vertical-line {\n    border-left: 3px solid var(--secondary-color);\n    height: 200px;\n}",
                     "styleUrl": "./sidebar.component.css"
                 }
             ],
